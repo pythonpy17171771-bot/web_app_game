@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Game Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <section id="menuScreen" class="screen menu-screen">
+      <h1>Mini Game Arcade</h1>
+      <div class="game-picker">
+        <button id="openSwordGame" class="game-card" type="button">
+          <span class="game-card-icon">⚔️</span>
+          <strong>검 강화하기</strong>
+        </button>
+        <button id="openRunnerGame" class="game-card" type="button">
+          <span class="game-card-icon">🏃</span>
+          <strong>달리기 게임</strong>
+        </button>
+      </div>
+    </section>
+
+    <section id="runnerScreen" class="screen hidden">
+      <div class="top-bar">
+        <button class="back-button" data-back type="button">이전</button>
+      </div>
+
+      <section class="hud" aria-label="game status">
+        <div>
+          <span>SCORE</span>
+          <strong id="score">0</strong>
+        </div>
+        <div>
+          <span>BEST SCORE</span>
+          <strong id="bestScore">0</strong>
+        </div>
+        <div>
+          <span>LEVEL</span>
+          <strong id="level">1</strong>
+        </div>
+        <div>
+          <span>SPEED</span>
+          <strong id="speed">1.0x</strong>
+        </div>
+      </section>
+
+      <section id="game" class="game day" aria-label="Pixel Runner game">
+        <div class="sky">
+          <div class="sun-moon" id="sunMoon">☀️</div>
+          <div class="cloud cloud-a"></div>
+          <div class="cloud cloud-b"></div>
+          <div class="cloud cloud-c"></div>
+        </div>
+
+        <div class="mountains layer"></div>
+        <div class="trees layer"></div>
+        <div class="grass layer"></div>
+        <div class="ground layer"></div>
+
+        <div id="player" class="player running" aria-label="player">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="arm arm-front"></div>
+          <div class="arm arm-back"></div>
+          <div class="leg leg-front"></div>
+          <div class="leg leg-back"></div>
+        </div>
+
+        <div id="statusBadge" class="status-badge hidden"></div>
+        <div id="overlay" class="overlay"></div>
+      </section>
+    </section>
+
+    <section id="swordScreen" class="screen sword-screen hidden">
+      <div class="top-bar">
+        <button class="back-button" data-back type="button">이전</button>
+      </div>
+
+      <div class="sword-panel">
+        <div class="sword-stats">
+          <div>
+            <span>GOLD</span>
+            <strong id="swordGold">1000</strong>
+          </div>
+          <div>
+            <span>LEVEL</span>
+            <strong id="swordLevel">+0</strong>
+          </div>
+          <div>
+            <span>BEST</span>
+            <strong id="swordBest">+0</strong>
+          </div>
+          <div>
+            <span>CHANCE</span>
+            <strong id="swordChance">90%</strong>
+          </div>
+        </div>
+
+        <div id="swordVisual" class="sword-visual">⚔️</div>
+        <div id="swordMessage" class="sword-message">강화 버튼을 눌러 검을 성장시키세요</div>
+        <div class="sword-actions">
+          <button id="enhanceSword" type="button">강화하기</button>
+          <button id="sellSword" class="sell-button" type="button">검 팔기</button>
+          <button id="resetSword" class="secondary-button" type="button">처음부터</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
